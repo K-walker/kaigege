@@ -126,6 +126,59 @@ foo(3, 4); // 6
 
 这里的 arguments[0] 是 foo 函数的第一个参数，也就是 n ，并不是箭头函数 f 的第一个参数
 
-## 箭头函数与普通函数的区别
+## 函数、函数原型和函数实例
 
-如上所述
+记得我在学习 JS 继承的时候，对于函数、函数原型和函数实例这几个概念理解的比较模糊，因此在看原型链继承的时候，脑袋犯晕，不知道大家有没有这个感受，我是很苦恼的，为此，我专门花时间去理解他们之间的关系，并画了一张图，给大家来理清楚这三者之间的关系：
+![函数、函数原型和函数实例之间关系图](https://img-blog.csdnimg.cn/20190109163510767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTAyOTg1NzY=,size_16,color_FFFFFF,t_70)
+
+如图所示：函数 `Personal` 包含 3 个部分，转换为代码如下：
+
+```javascript
+// 函数对象(构造函数)
+function Personal() {}
+// 函数原型对象
+Personal.prototype = {
+  constructor: Personal,
+  name: "hwk",
+  sayName: function () {},
+};
+// p : 函数实例
+var p = new Personal();
+p.name; // 访问函数原型对象上的属性
+p.sayName(); // 调用函数原型对象上的方法
+```
+
+### 1.函数
+
+所谓 **函数** 也就是 函数 `Personal ` 其本身，也叫作**构造函数** ，当一个函数被创建的同时，也会为其创建一个 `prototype` 属性，而这个属性，就是用来指向 **函数原型**，的我们可以把 `prototype` 理解为 `Personal `的一个属性，保存着**函数原型**的引用
+
+### 2.函数实例
+
+**函数实例** 很好理解，就是上面代码中通过 `new Personal()` 得到的实例 p，于此同时函数实例 `p` 内部会包含一个指向 **函数原型**的指针`[[Prototype]]`，因此我们通过 `p` 可以去调用 **函数原型** 上的属性和方法，但是由于`[[Prototype]]` 是内部属性，无法直接访问，但是可以通过一下方式进行获取：
+
+> 1.  `__proto__` : 部分浏览器提供了此属性去访问`[[Prototype]] `属性的值
+> 2.  通过`Object.getPrototypeOf` 去获取
+
+### 3.函数原型
+
+顾名思义，**函数原型**其实也是一个对象，它通过其`constructor` 属性与函数 `Personal ` 进行关联，上面的代码中，我通过重新赋值的方式定义了 **Personal 的原型** 的属性和方法:
+
+```javascript
+Personal.prototype = {
+  constructor: Personal,
+  name: "hwk",
+  sayName: function () {},
+};
+```
+
+这里大家注意一下，因为这种方式定义属性和方法，会打断 **函数 （Personal）** 和 **函数原型（Personal.prototype）** 之间的关系,因此需要重新将`constructor` 属性赋值为 `Personal` 函数本身，与其建立联系。
+
+其实我们把 **函数原型** 看做一个独立的对象即可，它与其 **函数** 通过`constructor` 属性关联，上面说的**函数（Personal）** 有个`prototype` 属性是指向**函数原型（Personal.prototype）** ，如下表示：
+
+```javascript
+Personal.prototype === Personal.prototype;
+```
+
+这里的代码我们把等号后面的 `Personal.prototype` 理解成一个单独的对象即可，而等号前面我们理解成 `Personal` 调用 `prototype` 属性，因为函数原型对象我们一般用这样 **Personal.prototype** 来表示而已，这里可能会稍微绕一点，不知道大家能否理解我的意思哈。其实我上面的图已经画的很明白了，我觉得看图更能理解，感觉我讲的有点绕，嘻嘻！
+
+好了，以上是个人对于它们三者之间关系的理解，如果你理解了，再去看 js 原型链继承应该就不难懂了，希望能帮助到大家，如果有讲的不对的地方，欢迎指正！

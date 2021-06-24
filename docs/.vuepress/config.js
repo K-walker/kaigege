@@ -61,6 +61,10 @@ module.exports = {
             link: "/js/scope/index.md",
           },
           {
+            text: "闭包",
+            link: "/js/closure/index.md",
+          },
+          {
             text: "跨域",
             link: "/js/cross/index.md",
           },
@@ -148,6 +152,18 @@ module.exports = {
         ],
       },
       { text: "算法", link: "/algorithm/index.md" },
+      {
+        text: "就是玩儿",
+        items: [
+          { text: "粒子特效", link: "/just-play/particle/index.md" },
+          { text: "生长的大树", link: "/just-play/tree/index.md" },
+          { text: "JSON可视化", link: "/just-play/jsonview/index.md" },
+          { text: "弹幕", link: "/just-play/danmu/index.md" },
+          { text: "国际化方案", link: "/just-play/i18n/index.md" },
+          { text: "动态生成el-menu", link: "/just-play/el-menu/index.md" },
+          { text: "vue+apicloud", link: "/just-play/apicloud/index.md" },
+        ],
+      },
       {
         text: "杂记",
         items: [

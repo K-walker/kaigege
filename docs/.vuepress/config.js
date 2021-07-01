@@ -2,6 +2,21 @@ module.exports = {
   title: "凯歌哥的小破站",
   description: "来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^",
   base: "/kaigege/",
+  head: [
+    [
+      "script",
+      { charset: "utf-8" },
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    `,
+    ],
+  ],
   themeConfig: {
     nav: [
       {

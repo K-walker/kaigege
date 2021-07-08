@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>同源策略 | 凯歌哥的小破站</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script charset="utf-8">
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <meta name="description" content="来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^">
+    
+    <link rel="preload" href="/kaigege/assets/css/0.styles.8ec65887.css" as="style"><link rel="preload" href="/kaigege/assets/js/app.ceb0ffd1.js" as="script"><link rel="preload" href="/kaigege/assets/js/2.9fb062ef.js" as="script"><link rel="preload" href="/kaigege/assets/js/13.3ad7ec73.js" as="script"><link rel="prefetch" href="/kaigege/assets/js/10.a5e49148.js"><link rel="prefetch" href="/kaigege/assets/js/11.83d4a5e2.js"><link rel="prefetch" href="/kaigege/assets/js/12.e79dc129.js"><link rel="prefetch" href="/kaigege/assets/js/14.8243d018.js"><link rel="prefetch" href="/kaigege/assets/js/15.33142d7e.js"><link rel="prefetch" href="/kaigege/assets/js/16.fdd6e019.js"><link rel="prefetch" href="/kaigege/assets/js/17.af4ed603.js"><link rel="prefetch" href="/kaigege/assets/js/18.c1ca2677.js"><link rel="prefetch" href="/kaigege/assets/js/19.2b30f205.js"><link rel="prefetch" href="/kaigege/assets/js/20.4746e1bd.js"><link rel="prefetch" href="/kaigege/assets/js/21.151883be.js"><link rel="prefetch" href="/kaigege/assets/js/22.74559b3c.js"><link rel="prefetch" href="/kaigege/assets/js/23.3cca0fce.js"><link rel="prefetch" href="/kaigege/assets/js/24.7df3446b.js"><link rel="prefetch" href="/kaigege/assets/js/25.4a44d0f2.js"><link rel="prefetch" href="/kaigege/assets/js/26.c2c7fc80.js"><link rel="prefetch" href="/kaigege/assets/js/27.1324fce7.js"><link rel="prefetch" href="/kaigege/assets/js/28.996ed6ca.js"><link rel="prefetch" href="/kaigege/assets/js/29.deb1a3ec.js"><link rel="prefetch" href="/kaigege/assets/js/3.efbefac2.js"><link rel="prefetch" href="/kaigege/assets/js/30.d610f047.js"><link rel="prefetch" href="/kaigege/assets/js/31.0772f947.js"><link rel="prefetch" href="/kaigege/assets/js/32.532e423d.js"><link rel="prefetch" href="/kaigege/assets/js/33.fd3fb45a.js"><link rel="prefetch" href="/kaigege/assets/js/34.2fee9448.js"><link rel="prefetch" href="/kaigege/assets/js/35.9c3daa23.js"><link rel="prefetch" href="/kaigege/assets/js/36.fe4154c8.js"><link rel="prefetch" href="/kaigege/assets/js/37.0ab195eb.js"><link rel="prefetch" href="/kaigege/assets/js/38.9eb113ff.js"><link rel="prefetch" href="/kaigege/assets/js/39.27f4fd6a.js"><link rel="prefetch" href="/kaigege/assets/js/4.47a1cbc9.js"><link rel="prefetch" href="/kaigege/assets/js/40.21d541aa.js"><link rel="prefetch" href="/kaigege/assets/js/41.fcab843b.js"><link rel="prefetch" href="/kaigege/assets/js/42.01441c2d.js"><link rel="prefetch" href="/kaigege/assets/js/43.a8ee3312.js"><link rel="prefetch" href="/kaigege/assets/js/44.38d710ce.js"><link rel="prefetch" href="/kaigege/assets/js/45.5be7be87.js"><link rel="prefetch" href="/kaigege/assets/js/46.078a271e.js"><link rel="prefetch" href="/kaigege/assets/js/47.2ad3e4bd.js"><link rel="prefetch" href="/kaigege/assets/js/48.1a43bf75.js"><link rel="prefetch" href="/kaigege/assets/js/49.ace34f72.js"><link rel="prefetch" href="/kaigege/assets/js/5.52d0a8da.js"><link rel="prefetch" href="/kaigege/assets/js/50.eeef3018.js"><link rel="prefetch" href="/kaigege/assets/js/51.c6e54794.js"><link rel="prefetch" href="/kaigege/assets/js/52.bc8b5fdf.js"><link rel="prefetch" href="/kaigege/assets/js/53.026d7abf.js"><link rel="prefetch" href="/kaigege/assets/js/54.5f72d91d.js"><link rel="prefetch" href="/kaigege/assets/js/55.d9fe3924.js"><link rel="prefetch" href="/kaigege/assets/js/56.ede25dda.js"><link rel="prefetch" href="/kaigege/assets/js/57.0ab04710.js"><link rel="prefetch" href="/kaigege/assets/js/58.1eb84b4d.js"><link rel="prefetch" href="/kaigege/assets/js/59.300f6aef.js"><link rel="prefetch" href="/kaigege/assets/js/6.4f6aa0a4.js"><link rel="prefetch" href="/kaigege/assets/js/60.79e4a68f.js"><link rel="prefetch" href="/kaigege/assets/js/61.b580788c.js"><link rel="prefetch" href="/kaigege/assets/js/62.21f846ad.js"><link rel="prefetch" href="/kaigege/assets/js/63.8be7dc66.js"><link rel="prefetch" href="/kaigege/assets/js/7.162aa43a.js"><link rel="prefetch" href="/kaigege/assets/js/8.12d84e63.js"><link rel="prefetch" href="/kaigege/assets/js/9.0e06adc7.js">
+    <link rel="stylesheet" href="/kaigege/assets/css/0.styles.8ec65887.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kaigege/" class="home-link router-link-active"><!----> <span class="site-name">凯歌哥的小破站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>同源策略</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kaigege/js/cross/#同源策略" class="sidebar-link">同源策略</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/js/cross/#cors-跨域资源共享" class="sidebar-link">CORS 跨域资源共享</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kaigege/js/cross/#简单请求" class="sidebar-link">简单请求</a></li><li class="sidebar-sub-header"><a href="/kaigege/js/cross/#非简单请求" class="sidebar-link">非简单请求</a></li><li class="sidebar-sub-header"><a href="/kaigege/js/cross/#请求头-和-响应头" class="sidebar-link">请求头 和 响应头</a></li></ul></li><li><a href="/kaigege/js/cross/#其他解决跨域方案" class="sidebar-link">其他解决跨域方案</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="同源策略"><a href="#同源策略" class="header-anchor">#</a> 同源策略</h2> <p>由于浏览器的同源策略，不允许浏览器进行跨域请求，所谓同源就是协议，域名，端口三者都相同。</p> <h4 id="同源策略的限制"><a href="#同源策略的限制" class="header-anchor">#</a> 同源策略的限制</h4> <p>一下功能受到同源策略的限制，不能在非同源情况下访问</p> <ul><li><code>Cookie、LocalStorage、IndexedDB</code></li> <li><code>DOM</code> 节点</li> <li><code>Ajax</code> 请求发送后，返回的结果会被浏览器拦截</li></ul> <h4 id="不受同源策略限制的标签"><a href="#不受同源策略限制的标签" class="header-anchor">#</a> 不受同源策略限制的标签</h4> <ul><li><code>&lt;img src='xxx'/&gt;</code></li> <li><code>&lt;link src='xxx'/&gt;</code></li> <li><code>&lt;script src='xxx'/&gt;</code></li></ul> <p>跨域请求不是请求发布出去，而是请求可以发送，并且服务器也能正确接收并返回，但是在返回时被浏览器拦截了；
+而通过表单却可以发起跨域请求，而 <code>ajax</code> 却不行？那是因为如果跨域请求可以访问其他域的内容，
+并且 <code>ajax</code> 可以响应返回的内容（如果其他域的内容是不安全的，或者是木马），所以浏览器认为这不安全，进行了拦截。
+但是表单却不会获取请求的内容，所以可以发起跨域请求，但是前面说了，跨域请求服务端可以接收，所以还是存在安全隐患</p> <h2 id="cors-跨域资源共享"><a href="#cors-跨域资源共享" class="header-anchor">#</a> CORS 跨域资源共享</h2> <p><code>CORS</code> 需要浏览器和服务器同时支持，目前所有浏览器都以支持该功能(IE10+);
+整个 CORS 通信过程是浏览器自动完成的，浏览器一旦发现 <code>AJAX</code> 发送的是跨域请求，
+会自动附加一些头信息，有时候还会多发起一次请求（<code>OPTIONS</code> 请求）</p> <p><strong>CORS</strong> 请求分为： 简单请求 和 非简单请求</p> <h3 id="简单请求"><a href="#简单请求" class="header-anchor">#</a> 简单请求</h3> <p>同时满足下面 2 大条件就属于简单请求</p> <ol><li><p>请求方法是下列方法之一:</p> <ul><li>HEADER</li> <li>GET</li> <li>POST</li></ul></li> <li><p>HTTP 头信息包含不超出以下几种字段</p> <ul><li>Accept</li> <li>Accept-Language</li> <li>Content-Language</li> <li>Content-Type: 仅限于以下三个值
+<ol><li>application/x-www-form-urlencoded</li> <li>multipart/form-data</li> <li>text/plain</li></ol></li> <li>Width</li> <li>DPR</li></ul></li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;load&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span><span class="token function">getAllResponseHeaders</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;http://192.168.4.100:3000/query&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Accept&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Accept-Language&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;zh-cn&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Language&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;zh-cn&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;text/plain&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Width&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;DPR&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>如上代码，HTTP 的请求头只包含上面列举的 6 个请求头时，只会发送简单请求，除以上情况以外，会发送非简单请求，
+且在发送非简单请求之前，会增加一次 <code>HTTP</code> 查询请求，称为 预检请求（方法名: <code>OPTIONS</code>）</p> <p><img src="/kaigege/assets/img/WX20210621-231600.c2359fcd.png" alt="WX20210621-231600.png"></p> <h3 id="非简单请求"><a href="#非简单请求" class="header-anchor">#</a> 非简单请求</h3> <p>上述代码增加 2 个请求头设置：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 自定义请求头</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;X-Custom-Power&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;kaige&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 修改 Content-Type 的类型</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>此时浏览器在发出正式的请求之前，会先发送一次预检请求，预检请求的部分头信息如下：</p> <blockquote><p>Access-Control-Request-Headers: content-type, x-custom-power
+Access-Control-Request-Method: GET
+Cache-Control: no-cache
+Connection: keep-alive
+Host: 192.168.4.100:3000
+Origin: chrome-search://local-ntp</p></blockquote> <p><img src="/kaigege/assets/img/WX20210621-231613.3bc4c2b0.png" alt="WX20210621-231613.png"></p> <h4 id="预检请求的回应"><a href="#预检请求的回应" class="header-anchor">#</a> 预检请求的回应</h4> <p>服务器收到预检请求后，检查 <code>Origin、Access-Control-Request-Method</code> 和 <code>Access-Control-Request-Headers</code>
+字段以后，确认允许跨域请求，做出相应回应,下面以 <code>node</code> 为例：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 此处允许任意跨域请求</span>
+  res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Origin&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 自定义的请求头 X-Custom-Power,Content-Type</span>
+  res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Headers&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;X-Custom-Power,Content-Type&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 允许跨域的方法</span>
+  res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Methods&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;PUT,GET&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="请求头-和-响应头"><a href="#请求头-和-响应头" class="header-anchor">#</a> 请求头 和 响应头</h3> <p>请求头</p> <ul><li>Origin</li></ul> <blockquote><p>此字段是浏览器自动添加的,如果 <code>Origin</code> 指定的源不在许可范围内，服务器会正常返回一个 HTTP 请求，
+如果响应头中没有 <code>Access-Control-Allow-Origin</code> 字段且与 <code>Origin</code> 指定的源不匹配（包含关系），
+则浏览器就知道报错了，会抛出一个错误，这个错误会被 <code>XMLHttpRequest</code> 的 <code>onerror</code> 回调函数捕获
+注意这种错不能通过 HTTP 状态吗来判断，因为 HTTP 响应码可能是 200</p></blockquote> <ul><li><code>Access-Control-Request-Headers</code> （预检请求中有）</li></ul> <blockquote><p>指定浏览器的 CORS 请求会会额外发送的 HTTP 头信息字段，通过 <code>xhr.setResponseHeader()</code> 设置</p></blockquote> <ul><li><code>Access-Control-Request-Method</code>（预检请求中有）</li></ul> <blockquote><p>指定浏览器的 CORS 请求会用到哪些 HTTP 方法，这里是 <code>GET</code></p></blockquote> <p>正因为预检请求中包含了 <code>Access-Control-Request-Headers</code> 和 <code>Access-Control-Request-Method</code>
+服务端才方便设置允许可以跨域的请求头和方法</p> <p>响应头</p> <ul><li>Access-Control-Allow-Origin</li></ul> <blockquote><p>设置允许跨域请求的地址（如：<code>http://www.example.com</code>），设置为 <code>*</code> 号表示允许任意的跨域请求</p></blockquote> <ul><li>Access-Control-Allow-Headers</li></ul> <blockquote><p>如果浏览器发起的请求头中包含 <code>Access-Control-Request-Headers</code> 字段，则 <code>Access-Control-Allow-Headers</code>
+字段是必须的，表明服务器支持的所有请求头信息字段，不限于预检请求中请求的字段</p></blockquote> <ul><li>Access-Control-Allow-Methods</li></ul> <blockquote><p>表明服务器支持的所有跨域请求的方法，注意返回的是所有支持的方法，而不是浏览器请求的那个方法，防止多次发起预检请求</p></blockquote> <ul><li>Access-Control-Max-Age</li></ul> <blockquote><p>可选，弱本次预检请求有效，这只有效期时间，单位秒，在这期间，不用再次发起预检请求</p></blockquote> <ul><li>Access-Control-Allow-Credentials</li></ul> <blockquote><p>表示是否允许发送 <code>cookie</code>。默认情况下 <code>cookie</code> 不包含在 <code>CORS</code> 请求中，设置为 <code>true</code>，表示服务器
+明确许可 <code>cookie</code> 可以包含在 <code>CORS</code> 请求中一起发送到服务器，并且需要浏览器端设置
+<code>XMLHttpRequest</code> 对象的 <code>withCredentials</code> 属性为 <code>true</code>, 允许浏览器发送 <code>cookie</code>，否则不会处理。</p></blockquote> <ul><li>Access-Control-Expose-Headers</li></ul> <p>可选，发送 <code>CORS</code> 请求时， <code>XMLHttpRequest</code> 对象的 <code>getResponseHeader()</code> 方法，只能拿到 6 个响应头信息:</p> <ol><li>Cache-Control</li> <li>Content-Language</li> <li>Content-Type</li> <li>Expires</li> <li>Last-Modified</li> <li>Pragma</li></ol> <p>如果想要拿到其他的响应头信息，需要通过 <code>Access-Control-Expose-Headers</code> 来指定：</p> <blockquote><p><code>Access-Control-Expose-Headers: 'ETag,Date,X-Custom-Power'</code></p></blockquote> <p><code>X-Custom-Power</code> 为服务端自定义的头信息</p> <h2 id="其他解决跨域方案"><a href="#其他解决跨域方案" class="header-anchor">#</a> 其他解决跨域方案</h2> <h4 id="img"><a href="#img" class="header-anchor">#</a> img</h4> <p><code>img</code> 标签不受跨域影响</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 通过设置 src ，访问其他网站的链接</span>
+img<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">&quot;http://www.it3315.com/example?name=123&quot;</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>但是这种方式只能用于浏览器与服务器单向通信，因为它不能接收到服务器响应的文本，
+但是由于浏览器的 COBR 限制，并不能访问到</p> <h4 id="jsonp-需要服务端支持"><a href="#jsonp-需要服务端支持" class="header-anchor">#</a> JSONP（需要服务端支持）</h4> <p><code>jsonp</code> 只支持异步的 <code>get</code> 请求，不支持 <code>post</code>,有一定的局限性</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;script&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">&quot;http://192.168.4.100:3000/query?callback=handleResponse&quot;</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>服务端响应 jsonp 请求</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/query&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> callback <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 针对jsonp请求的特殊处理</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>callback<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">('jsonp success')</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data<span class="token operator">:</span> <span class="token string">&quot;hello world&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="node-中间代理"><a href="#node-中间代理" class="header-anchor">#</a> Node 中间代理</h4> <p><strong>同源策略</strong> 是浏览器需要遵循的标准，但如果是服务器向服务器发送请求，就没有这个限制，通过 <code>Node</code> 中间服务
+转发浏览器发送的请求到目标服务器，获取数据之后，再返回给浏览器即可</p> <h4 id="nginx-反向代理"><a href="#nginx-反向代理" class="header-anchor">#</a> Nginx 反向代理</h4> <p>通过 <code>nginx</code> 反向代理实现跨域是最简单的跨域方式</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/kaigege/assets/js/app.ceb0ffd1.js" defer></script><script src="/kaigege/assets/js/2.9fb062ef.js" defer></script><script src="/kaigege/assets/js/13.3ad7ec73.js" defer></script>
+  </body>
+</html>

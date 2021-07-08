@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Object.create 和 New | 凯歌哥的小破站</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script charset="utf-8">
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <meta name="description" content="来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^">
+    
+    <link rel="preload" href="/kaigege/assets/css/0.styles.8ec65887.css" as="style"><link rel="preload" href="/kaigege/assets/js/app.ceb0ffd1.js" as="script"><link rel="preload" href="/kaigege/assets/js/2.9fb062ef.js" as="script"><link rel="preload" href="/kaigege/assets/js/44.38d710ce.js" as="script"><link rel="prefetch" href="/kaigege/assets/js/10.a5e49148.js"><link rel="prefetch" href="/kaigege/assets/js/11.83d4a5e2.js"><link rel="prefetch" href="/kaigege/assets/js/12.e79dc129.js"><link rel="prefetch" href="/kaigege/assets/js/13.3ad7ec73.js"><link rel="prefetch" href="/kaigege/assets/js/14.8243d018.js"><link rel="prefetch" href="/kaigege/assets/js/15.33142d7e.js"><link rel="prefetch" href="/kaigege/assets/js/16.fdd6e019.js"><link rel="prefetch" href="/kaigege/assets/js/17.af4ed603.js"><link rel="prefetch" href="/kaigege/assets/js/18.c1ca2677.js"><link rel="prefetch" href="/kaigege/assets/js/19.2b30f205.js"><link rel="prefetch" href="/kaigege/assets/js/20.4746e1bd.js"><link rel="prefetch" href="/kaigege/assets/js/21.151883be.js"><link rel="prefetch" href="/kaigege/assets/js/22.74559b3c.js"><link rel="prefetch" href="/kaigege/assets/js/23.3cca0fce.js"><link rel="prefetch" href="/kaigege/assets/js/24.7df3446b.js"><link rel="prefetch" href="/kaigege/assets/js/25.4a44d0f2.js"><link rel="prefetch" href="/kaigege/assets/js/26.c2c7fc80.js"><link rel="prefetch" href="/kaigege/assets/js/27.1324fce7.js"><link rel="prefetch" href="/kaigege/assets/js/28.996ed6ca.js"><link rel="prefetch" href="/kaigege/assets/js/29.deb1a3ec.js"><link rel="prefetch" href="/kaigege/assets/js/3.efbefac2.js"><link rel="prefetch" href="/kaigege/assets/js/30.d610f047.js"><link rel="prefetch" href="/kaigege/assets/js/31.0772f947.js"><link rel="prefetch" href="/kaigege/assets/js/32.532e423d.js"><link rel="prefetch" href="/kaigege/assets/js/33.fd3fb45a.js"><link rel="prefetch" href="/kaigege/assets/js/34.2fee9448.js"><link rel="prefetch" href="/kaigege/assets/js/35.9c3daa23.js"><link rel="prefetch" href="/kaigege/assets/js/36.fe4154c8.js"><link rel="prefetch" href="/kaigege/assets/js/37.0ab195eb.js"><link rel="prefetch" href="/kaigege/assets/js/38.9eb113ff.js"><link rel="prefetch" href="/kaigege/assets/js/39.27f4fd6a.js"><link rel="prefetch" href="/kaigege/assets/js/4.47a1cbc9.js"><link rel="prefetch" href="/kaigege/assets/js/40.21d541aa.js"><link rel="prefetch" href="/kaigege/assets/js/41.fcab843b.js"><link rel="prefetch" href="/kaigege/assets/js/42.01441c2d.js"><link rel="prefetch" href="/kaigege/assets/js/43.a8ee3312.js"><link rel="prefetch" href="/kaigege/assets/js/45.5be7be87.js"><link rel="prefetch" href="/kaigege/assets/js/46.078a271e.js"><link rel="prefetch" href="/kaigege/assets/js/47.2ad3e4bd.js"><link rel="prefetch" href="/kaigege/assets/js/48.1a43bf75.js"><link rel="prefetch" href="/kaigege/assets/js/49.ace34f72.js"><link rel="prefetch" href="/kaigege/assets/js/5.52d0a8da.js"><link rel="prefetch" href="/kaigege/assets/js/50.eeef3018.js"><link rel="prefetch" href="/kaigege/assets/js/51.c6e54794.js"><link rel="prefetch" href="/kaigege/assets/js/52.bc8b5fdf.js"><link rel="prefetch" href="/kaigege/assets/js/53.026d7abf.js"><link rel="prefetch" href="/kaigege/assets/js/54.5f72d91d.js"><link rel="prefetch" href="/kaigege/assets/js/55.d9fe3924.js"><link rel="prefetch" href="/kaigege/assets/js/56.ede25dda.js"><link rel="prefetch" href="/kaigege/assets/js/57.0ab04710.js"><link rel="prefetch" href="/kaigege/assets/js/58.1eb84b4d.js"><link rel="prefetch" href="/kaigege/assets/js/59.300f6aef.js"><link rel="prefetch" href="/kaigege/assets/js/6.4f6aa0a4.js"><link rel="prefetch" href="/kaigege/assets/js/60.79e4a68f.js"><link rel="prefetch" href="/kaigege/assets/js/61.b580788c.js"><link rel="prefetch" href="/kaigege/assets/js/62.21f846ad.js"><link rel="prefetch" href="/kaigege/assets/js/63.8be7dc66.js"><link rel="prefetch" href="/kaigege/assets/js/7.162aa43a.js"><link rel="prefetch" href="/kaigege/assets/js/8.12d84e63.js"><link rel="prefetch" href="/kaigege/assets/js/9.0e06adc7.js">
+    <link rel="stylesheet" href="/kaigege/assets/css/0.styles.8ec65887.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kaigege/" class="home-link router-link-active"><!----> <span class="site-name">凯歌哥的小破站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Object.create 和 New</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kaigege/js/new/#object-create" class="sidebar-link">Object.create</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kaigege/js/new/#参数" class="sidebar-link">参数</a></li><li class="sidebar-sub-header"><a href="/kaigege/js/new/#实现继承" class="sidebar-link">实现继承</a></li><li class="sidebar-sub-header"><a href="/kaigege/js/new/#兼容" class="sidebar-link">兼容</a></li></ul></li><li><a href="/kaigege/js/new/#new-关键字" class="sidebar-link">new 关键字</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="object-create-和-new"><a href="#object-create-和-new" class="header-anchor">#</a> Object.create 和 New</h1> <h2 id="object-create"><a href="#object-create" class="header-anchor">#</a> Object.create</h2> <p>创建一个新对象，根据给定的参数作为新对象的原型（<strong>proto</strong>）</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;haha&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">say</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// haha</span>
+o<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hello</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>person 上的属性和方法将会作为对象 o 原型上的属性和方法</p> <h3 id="参数"><a href="#参数" class="header-anchor">#</a> 参数</h3> <ul><li><strong>proto ：</strong> 新创建对象的原型对象</li> <li><strong>propertiesObject ：</strong> 可选，添加到新对象上 <strong>不可枚举</strong> 的属性对象的描述（<strong>自身属性，非原型上的属性</strong>）</li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  age<span class="token operator">:</span> <span class="token punctuation">{</span>
+    value<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+    writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 24</span>
+o<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>虽说是添加不可枚举的属性对象，但是可以通过配置 <code>enumerable</code> 描述来让其可被枚举</p> <h3 id="实现继承"><a href="#实现继承" class="header-anchor">#</a> 实现继承</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// Shape - 父类(superclass)</span>
+<span class="token keyword">function</span> <span class="token function">Shape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 父类的方法</span>
+<span class="token class-name">Shape</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+=</span> x<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>'Shape add<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Rectangle - 子类(subclass)</span>
+<span class="token keyword">function</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">Shape</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// call super constructor.</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 子类续承父类</span>
+<span class="token class-name">Rectangle</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Shape</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Rectangle</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Rectangle<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> rect <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+rect<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// 输出 Shape add</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rect <span class="token keyword">instanceof</span> <span class="token class-name">Shape</span><span class="token punctuation">)</span> <span class="token comment">// 输出 true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rect <span class="token keyword">instanceof</span> <span class="token class-name">Rectangle</span><span class="token punctuation">)</span> <span class="token comment">// 输出 true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>如果不调用 <code>Shape.call(this)</code>，则无法访问 <code>rect.x</code>, 当调用时，Shape 对象构造函数里的 <code>this</code> 则指向的是 <code>Rectangle</code> , 因此 <code>this.x = 0</code>; 是定义在 <code>Rectangle</code> 上
+但是一般，我们不这样去实现继承，关于继承，会有单独的介绍，此处不做扩展</p> <h3 id="兼容"><a href="#兼容" class="header-anchor">#</a> 兼容</h3> <p>由于有些浏览器可能不支持 Object.create 方法，因此我们根据它的定义，自己实现：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Object<span class="token punctuation">.</span>create <span class="token operator">=</span>
+  Object<span class="token punctuation">.</span>create <span class="token operator">||</span>
+  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">proto</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token constant">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 1. 创建一个对象</span>
+    <span class="token class-name">F</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> proto<span class="token punctuation">;</span> <span class="token comment">// 2. 修改这个对象的原型</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3. 通过这个对象的构造函数去创建一个新实例返回</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 其他实现方式</span>
+Object<span class="token punctuation">.</span>create <span class="token operator">=</span>
+  Object<span class="token punctuation">.</span>create <span class="token operator">||</span>
+  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">proto</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// or const o = new Object();</span>
+    o<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> proto<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> o<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>以上 2 种方式,达到的效果都是一样的</p> <h2 id="new-关键字"><a href="#new-关键字" class="header-anchor">#</a> new 关键字</h2> <p>使用 new 关键字如何创建一个对象的实例:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Foo</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">say</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'say '</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>‘hello’<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>new Foo('hello') 这句代码， new 到底做了什么操作？根据 MDN 的说明, new 关键字做了下面几件事：</p> <blockquote><ol><li>创建一个空对象(即 <code>{}</code> )</li> <li>将目标函数（就是 new 后面跟的函数）的原型作为该对象的原型</li> <li>将步骤 1 中创建对象，作为目标函数 this 的上下文</li> <li>如果目标函数没有返回值，则返回步骤 1 创建的对象，否则返回目标函数的返回值</li></ol></blockquote> <p>下面我们用代码来实现上面这段描述:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/**
+ * @param F 目标函数
+ * @param args 调用构造函数时传入的参数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">New</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">F</span><span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  o<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">F</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token constant">F</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 如果函数 F 返回非对象值，则返回 o 对象</span>
+  <span class="token keyword">return</span> obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span> ？ obj <span class="token operator">:</span> o<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 根据 Foo 函数创建它的实例</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token function">New</span><span class="token punctuation">(</span>Foo<span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 使用 new 关键字创建实例</span>
+<span class="token keyword">const</span> boo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token string">'wrold'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+foo<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// say wrold</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// wrold</span>
+
+boo<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// say hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>boo<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// hello</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>如上，通过 New 函数创建的实例与 new 关键字创建的实例都可访问函数的属性和原型上的方法</p> <p>注意，一些 <strong>native</strong> 的对象无法使用 <code>New</code> 函数来创建实例比如 <code>Date</code> 等</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/kaigege/assets/js/app.ceb0ffd1.js" defer></script><script src="/kaigege/assets/js/2.9fb062ef.js" defer></script><script src="/kaigege/assets/js/44.38d710ce.js" defer></script>
+  </body>
+</html>

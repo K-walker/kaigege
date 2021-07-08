@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker 命令 | 凯歌哥的小破站</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script charset="utf-8">
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <meta name="description" content="来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^">
+    
+    <link rel="preload" href="/kaigege/assets/css/0.styles.8ec65887.css" as="style"><link rel="preload" href="/kaigege/assets/js/app.ceb0ffd1.js" as="script"><link rel="preload" href="/kaigege/assets/js/2.9fb062ef.js" as="script"><link rel="preload" href="/kaigege/assets/js/24.7df3446b.js" as="script"><link rel="prefetch" href="/kaigege/assets/js/10.a5e49148.js"><link rel="prefetch" href="/kaigege/assets/js/11.83d4a5e2.js"><link rel="prefetch" href="/kaigege/assets/js/12.e79dc129.js"><link rel="prefetch" href="/kaigege/assets/js/13.3ad7ec73.js"><link rel="prefetch" href="/kaigege/assets/js/14.8243d018.js"><link rel="prefetch" href="/kaigege/assets/js/15.33142d7e.js"><link rel="prefetch" href="/kaigege/assets/js/16.fdd6e019.js"><link rel="prefetch" href="/kaigege/assets/js/17.af4ed603.js"><link rel="prefetch" href="/kaigege/assets/js/18.c1ca2677.js"><link rel="prefetch" href="/kaigege/assets/js/19.2b30f205.js"><link rel="prefetch" href="/kaigege/assets/js/20.4746e1bd.js"><link rel="prefetch" href="/kaigege/assets/js/21.151883be.js"><link rel="prefetch" href="/kaigege/assets/js/22.74559b3c.js"><link rel="prefetch" href="/kaigege/assets/js/23.3cca0fce.js"><link rel="prefetch" href="/kaigege/assets/js/25.4a44d0f2.js"><link rel="prefetch" href="/kaigege/assets/js/26.c2c7fc80.js"><link rel="prefetch" href="/kaigege/assets/js/27.1324fce7.js"><link rel="prefetch" href="/kaigege/assets/js/28.996ed6ca.js"><link rel="prefetch" href="/kaigege/assets/js/29.deb1a3ec.js"><link rel="prefetch" href="/kaigege/assets/js/3.efbefac2.js"><link rel="prefetch" href="/kaigege/assets/js/30.d610f047.js"><link rel="prefetch" href="/kaigege/assets/js/31.0772f947.js"><link rel="prefetch" href="/kaigege/assets/js/32.532e423d.js"><link rel="prefetch" href="/kaigege/assets/js/33.fd3fb45a.js"><link rel="prefetch" href="/kaigege/assets/js/34.2fee9448.js"><link rel="prefetch" href="/kaigege/assets/js/35.9c3daa23.js"><link rel="prefetch" href="/kaigege/assets/js/36.fe4154c8.js"><link rel="prefetch" href="/kaigege/assets/js/37.0ab195eb.js"><link rel="prefetch" href="/kaigege/assets/js/38.9eb113ff.js"><link rel="prefetch" href="/kaigege/assets/js/39.27f4fd6a.js"><link rel="prefetch" href="/kaigege/assets/js/4.47a1cbc9.js"><link rel="prefetch" href="/kaigege/assets/js/40.21d541aa.js"><link rel="prefetch" href="/kaigege/assets/js/41.fcab843b.js"><link rel="prefetch" href="/kaigege/assets/js/42.01441c2d.js"><link rel="prefetch" href="/kaigege/assets/js/43.a8ee3312.js"><link rel="prefetch" href="/kaigege/assets/js/44.38d710ce.js"><link rel="prefetch" href="/kaigege/assets/js/45.5be7be87.js"><link rel="prefetch" href="/kaigege/assets/js/46.078a271e.js"><link rel="prefetch" href="/kaigege/assets/js/47.2ad3e4bd.js"><link rel="prefetch" href="/kaigege/assets/js/48.1a43bf75.js"><link rel="prefetch" href="/kaigege/assets/js/49.ace34f72.js"><link rel="prefetch" href="/kaigege/assets/js/5.52d0a8da.js"><link rel="prefetch" href="/kaigege/assets/js/50.eeef3018.js"><link rel="prefetch" href="/kaigege/assets/js/51.c6e54794.js"><link rel="prefetch" href="/kaigege/assets/js/52.bc8b5fdf.js"><link rel="prefetch" href="/kaigege/assets/js/53.026d7abf.js"><link rel="prefetch" href="/kaigege/assets/js/54.5f72d91d.js"><link rel="prefetch" href="/kaigege/assets/js/55.d9fe3924.js"><link rel="prefetch" href="/kaigege/assets/js/56.ede25dda.js"><link rel="prefetch" href="/kaigege/assets/js/57.0ab04710.js"><link rel="prefetch" href="/kaigege/assets/js/58.1eb84b4d.js"><link rel="prefetch" href="/kaigege/assets/js/59.300f6aef.js"><link rel="prefetch" href="/kaigege/assets/js/6.4f6aa0a4.js"><link rel="prefetch" href="/kaigege/assets/js/60.79e4a68f.js"><link rel="prefetch" href="/kaigege/assets/js/61.b580788c.js"><link rel="prefetch" href="/kaigege/assets/js/62.21f846ad.js"><link rel="prefetch" href="/kaigege/assets/js/63.8be7dc66.js"><link rel="prefetch" href="/kaigege/assets/js/7.162aa43a.js"><link rel="prefetch" href="/kaigege/assets/js/8.12d84e63.js"><link rel="prefetch" href="/kaigege/assets/js/9.0e06adc7.js">
+    <link rel="stylesheet" href="/kaigege/assets/css/0.styles.8ec65887.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kaigege/" class="home-link router-link-active"><!----> <span class="site-name">凯歌哥的小破站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>docker 命令</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kaigege/commands/docker/#启动" class="sidebar-link">启动</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/commands/docker/#镜像-image" class="sidebar-link">镜像 image</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/commands/docker/#发布-image" class="sidebar-link">发布 image</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/commands/docker/#容器-container" class="sidebar-link">容器 container</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/commands/docker/#dockerfile" class="sidebar-link">Dockerfile</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kaigege/commands/docker/#run-命令-cmd-的区别" class="sidebar-link">RUN 命令 CMD 的区别</a></li></ul></li><li><a href="/kaigege/commands/docker/#其他" class="sidebar-link">其他</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker-命令"><a href="#docker-命令" class="header-anchor">#</a> docker 命令</h1> <p>docker-compose 国内安装镜像</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-<span class="token variable"><span class="token variable">`</span><span class="token function">uname</span> -s<span class="token variable">`</span></span>-<span class="token variable"><span class="token variable">`</span><span class="token function">uname</span> -m<span class="token variable">`</span></span> <span class="token operator">&gt;</span> /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">service</span> docker start
+<span class="token comment"># or</span>
+systemctl start docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="镜像-image"><a href="#镜像-image" class="header-anchor">#</a> 镜像 image</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查看本机所有镜像</span>
+docker image <span class="token function">ls</span>
+
+<span class="token comment"># 删除镜像</span>
+docker image <span class="token function">rm</span> <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>
+
+<span class="token comment"># 拉取镜像 docker image pull [library/]hello-world</span>
+<span class="token comment"># library 为默认分组，可以忽略</span>
+docker image pull <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>
+
+<span class="token comment"># 通过 Dockerfile 文件创建 image</span>
+<span class="token comment"># docker image build -t kaige:0.0.1 ./home</span>
+docker image build -t <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>:<span class="token punctuation">[</span>版本号默认latest<span class="token punctuation">]</span> <span class="token punctuation">[</span>Dockerfile文件所在目录<span class="token punctuation">]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="发布-image"><a href="#发布-image" class="header-anchor">#</a> 发布 image</h2> <p>去 <a href="hub.docker.com">hub.docker.com</a> 或 <a href="cloud.docker.com">cloud.docker.com</a> 注册一个账户, 使用如下命令登陆:</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker login
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后执行如下命令给镜像打 tag:</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># docker image tag hello:0.0.1 kaige/hello:0.0.1</span>
+docker image tag <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span> <span class="token punctuation">[</span>username<span class="token punctuation">]</span>/<span class="token punctuation">[</span>repository<span class="token punctuation">]</span>:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+
+<span class="token comment"># 或者重新构建 image</span>
+docker image build -t <span class="token punctuation">[</span>username<span class="token punctuation">]</span>/<span class="token punctuation">[</span>repository<span class="token punctuation">]</span>:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span> <span class="token punctuation">[</span>Dockerfile文件所在目录<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>最后执行如下命令发布：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker image push <span class="token punctuation">[</span>username<span class="token punctuation">]</span>/<span class="token punctuation">[</span>repository<span class="token punctuation">]</span>:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="容器-container"><a href="#容器-container" class="header-anchor">#</a> 容器 container</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查看本机正在运行的容器</span>
+docker container <span class="token function">ls</span>
+
+<span class="token comment"># 查看本机所有容器</span>
+docker container <span class="token function">ls</span> --all
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 创建一个容器 (每执行一次都会生成一个容器文件)</span>
+docker container run <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>运行 <code>image</code> 文件会生成一个容器实例，这个<strong>容器实例</strong>也是一个文件，因此容易一旦生成，
+会同时存在 <strong>image 文件</strong>和<strong>容器文件</strong></p> <blockquote><p><code>const 容器文件 = new image()</code></p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># --rm 参数表示关闭终止容器时，自动删除容器文件</span>
+docker container run --rm -p <span class="token number">8080</span>:80 -it <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span> /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>容器的启动与停止</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 启动一个容器</span>
+docker container start <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 停止一个容器</span>
+docker container stop <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 删除容器文件</span>
+docker container <span class="token function">rm</span> <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 终止一个容器</span>
+docker container <span class="token function">kill</span> <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> Dockerfile</h2> <p>如何编写 dockerfile 文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>FROM node:8.0
+COPY <span class="token builtin class-name">.</span> /app
+WORKDIR /app
+RUN <span class="token function">npm</span> <span class="token function">install</span>
+EXPOSE <span class="token number">300</span>
+CMD node app/index.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>Dockerfile 语法解析：</p> <ul><li><code>FROM node:80</code>: 继承官方的 node 镜像</li> <li><code>COPY . /app</code>: 将当前目录所有内容复制到镜像中的 app 目录下（如果没有 app 文件夹会自动创建）</li> <li><code>WORKDIR /app</code>: 指定接下来的工作路径为 /app</li> <li><code>RUN npm install</code>: 在 /app 目录下执行 npm install 命令</li> <li><code>EXPOSE 3000</code>: 将容器 3000 端口暴露出来，允许外部连接</li> <li><code>CMD node app/index.js</code>： 执行 node app/index.js 启动服务</li></ul> <p>总结：拉取 node 镜像，然后将当前目录文件拷贝到容器的 <code>/app</code> 路径下，
+并且指定接下来的工作路径为 <code>/app</code>, 然后运行 <code>npm</code> 命令，安装依赖，然后暴露出 <code>3000</code> 端口，
+最后启动 node 服务，这样外界就可以通过 <code>http://localhost:3000</code> 访问容器里的 node 服务的内容了</p> <h3 id="run-命令-cmd-的区别"><a href="#run-命令-cmd-的区别" class="header-anchor">#</a> RUN 命令 CMD 的区别</h3> <ul><li><code>RUN</code> 命令在镜像文件构建阶段执行，执行的结果会打包进入进镜像文件；</li> <li><code>CMD</code> 命令则是在容器启动后执行</li></ul> <p>一个 <code>Dockerfile</code> 可以包含多个 <code>RUN</code> 命令，但是只能有一个 <code>CMD</code> 命令</p> <blockquote><p>如果指定了 <code>CMD</code> 命令，那么在 <code>docker container run</code> 后面就不能再附加命令了，比如前面的 <code>/bin/bash</code>, 否则会覆盖 <code>CMD</code> 命令</p></blockquote> <h2 id="其他"><a href="#其他" class="header-anchor">#</a> 其他</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查看日志</span>
+docker container logs <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 进入正在运行的容器</span>
+docker container <span class="token builtin class-name">exec</span> -it <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span> /bin/bash
+
+<span class="token comment"># 将容器里的文件拷贝到本机</span>
+docker container <span class="token function">cp</span> <span class="token punctuation">[</span>容器ID<span class="token punctuation">]</span>:<span class="token punctuation">[</span>文件路径<span class="token punctuation">]</span> <span class="token punctuation">[</span>本机地址<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/kaigege/assets/js/app.ceb0ffd1.js" defer></script><script src="/kaigege/assets/js/2.9fb062ef.js" defer></script><script src="/kaigege/assets/js/24.7df3446b.js" defer></script>
+  </body>
+</html>

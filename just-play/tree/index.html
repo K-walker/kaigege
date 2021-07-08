@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>canvas 绘制生长的大树 | 凯歌哥的小破站</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script charset="utf-8">
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <meta name="description" content="来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^">
+    
+    <link rel="preload" href="/kaigege/assets/css/0.styles.8ec65887.css" as="style"><link rel="preload" href="/kaigege/assets/js/app.ceb0ffd1.js" as="script"><link rel="preload" href="/kaigege/assets/js/2.9fb062ef.js" as="script"><link rel="preload" href="/kaigege/assets/js/55.d9fe3924.js" as="script"><link rel="prefetch" href="/kaigege/assets/js/10.a5e49148.js"><link rel="prefetch" href="/kaigege/assets/js/11.83d4a5e2.js"><link rel="prefetch" href="/kaigege/assets/js/12.e79dc129.js"><link rel="prefetch" href="/kaigege/assets/js/13.3ad7ec73.js"><link rel="prefetch" href="/kaigege/assets/js/14.8243d018.js"><link rel="prefetch" href="/kaigege/assets/js/15.33142d7e.js"><link rel="prefetch" href="/kaigege/assets/js/16.fdd6e019.js"><link rel="prefetch" href="/kaigege/assets/js/17.af4ed603.js"><link rel="prefetch" href="/kaigege/assets/js/18.c1ca2677.js"><link rel="prefetch" href="/kaigege/assets/js/19.2b30f205.js"><link rel="prefetch" href="/kaigege/assets/js/20.4746e1bd.js"><link rel="prefetch" href="/kaigege/assets/js/21.151883be.js"><link rel="prefetch" href="/kaigege/assets/js/22.74559b3c.js"><link rel="prefetch" href="/kaigege/assets/js/23.3cca0fce.js"><link rel="prefetch" href="/kaigege/assets/js/24.7df3446b.js"><link rel="prefetch" href="/kaigege/assets/js/25.4a44d0f2.js"><link rel="prefetch" href="/kaigege/assets/js/26.c2c7fc80.js"><link rel="prefetch" href="/kaigege/assets/js/27.1324fce7.js"><link rel="prefetch" href="/kaigege/assets/js/28.996ed6ca.js"><link rel="prefetch" href="/kaigege/assets/js/29.deb1a3ec.js"><link rel="prefetch" href="/kaigege/assets/js/3.efbefac2.js"><link rel="prefetch" href="/kaigege/assets/js/30.d610f047.js"><link rel="prefetch" href="/kaigege/assets/js/31.0772f947.js"><link rel="prefetch" href="/kaigege/assets/js/32.532e423d.js"><link rel="prefetch" href="/kaigege/assets/js/33.fd3fb45a.js"><link rel="prefetch" href="/kaigege/assets/js/34.2fee9448.js"><link rel="prefetch" href="/kaigege/assets/js/35.9c3daa23.js"><link rel="prefetch" href="/kaigege/assets/js/36.fe4154c8.js"><link rel="prefetch" href="/kaigege/assets/js/37.0ab195eb.js"><link rel="prefetch" href="/kaigege/assets/js/38.9eb113ff.js"><link rel="prefetch" href="/kaigege/assets/js/39.27f4fd6a.js"><link rel="prefetch" href="/kaigege/assets/js/4.47a1cbc9.js"><link rel="prefetch" href="/kaigege/assets/js/40.21d541aa.js"><link rel="prefetch" href="/kaigege/assets/js/41.fcab843b.js"><link rel="prefetch" href="/kaigege/assets/js/42.01441c2d.js"><link rel="prefetch" href="/kaigege/assets/js/43.a8ee3312.js"><link rel="prefetch" href="/kaigege/assets/js/44.38d710ce.js"><link rel="prefetch" href="/kaigege/assets/js/45.5be7be87.js"><link rel="prefetch" href="/kaigege/assets/js/46.078a271e.js"><link rel="prefetch" href="/kaigege/assets/js/47.2ad3e4bd.js"><link rel="prefetch" href="/kaigege/assets/js/48.1a43bf75.js"><link rel="prefetch" href="/kaigege/assets/js/49.ace34f72.js"><link rel="prefetch" href="/kaigege/assets/js/5.52d0a8da.js"><link rel="prefetch" href="/kaigege/assets/js/50.eeef3018.js"><link rel="prefetch" href="/kaigege/assets/js/51.c6e54794.js"><link rel="prefetch" href="/kaigege/assets/js/52.bc8b5fdf.js"><link rel="prefetch" href="/kaigege/assets/js/53.026d7abf.js"><link rel="prefetch" href="/kaigege/assets/js/54.5f72d91d.js"><link rel="prefetch" href="/kaigege/assets/js/56.ede25dda.js"><link rel="prefetch" href="/kaigege/assets/js/57.0ab04710.js"><link rel="prefetch" href="/kaigege/assets/js/58.1eb84b4d.js"><link rel="prefetch" href="/kaigege/assets/js/59.300f6aef.js"><link rel="prefetch" href="/kaigege/assets/js/6.4f6aa0a4.js"><link rel="prefetch" href="/kaigege/assets/js/60.79e4a68f.js"><link rel="prefetch" href="/kaigege/assets/js/61.b580788c.js"><link rel="prefetch" href="/kaigege/assets/js/62.21f846ad.js"><link rel="prefetch" href="/kaigege/assets/js/63.8be7dc66.js"><link rel="prefetch" href="/kaigege/assets/js/7.162aa43a.js"><link rel="prefetch" href="/kaigege/assets/js/8.12d84e63.js"><link rel="prefetch" href="/kaigege/assets/js/9.0e06adc7.js">
+    <link rel="stylesheet" href="/kaigege/assets/css/0.styles.8ec65887.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kaigege/" class="home-link router-link-active"><!----> <span class="site-name">凯歌哥的小破站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>canvas 绘制生长的大树</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kaigege/just-play/tree/#html-源码" class="sidebar-link">HTML 源码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/just-play/tree/#tree-js-源码" class="sidebar-link">tree.js 源码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/just-play/tree/#原理" class="sidebar-link">原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/kaigege/just-play/tree/#生长" class="sidebar-link">生长</a></li><li class="sidebar-sub-header"><a href="/kaigege/just-play/tree/#扭曲" class="sidebar-link">扭曲</a></li><li class="sidebar-sub-header"><a href="/kaigege/just-play/tree/#分支" class="sidebar-link">分支</a></li><li class="sidebar-sub-header"><a href="/kaigege/just-play/tree/#开花" class="sidebar-link">开花</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="canvas-绘制生长的大树"><a href="#canvas-绘制生长的大树" class="header-anchor">#</a> canvas 绘制生长的大树</h1> <p>最近看了一些很牛逼的特效，有位大神用 canvas 绘制的 <a href="http://sc.chinaz.com/jiaoben/170325372120.htm" target="_blank" rel="noopener noreferrer">梦幻大树<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，深深的震撼了我，超级厉害，于是我也准备尝试着去实现，可能脑子不够用，总是无法实现他那样的梦幻效果，最终只好退而求其次，实现了下面的这种大树，还算满意吧。</p> <p>效果图</p> <blockquote><p><img src="https://img-blog.csdnimg.cn/img_convert/54c65563f90c39abaf73942401243b57.gif" alt="动态效果图"></p></blockquote> <h2 id="html-源码"><a href="#html-源码" class="header-anchor">#</a> HTML 源码</h2> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>生长的树<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">html,
+      body</span> <span class="token punctuation">{</span>
+        <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>myCanvas<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>此浏览器不支持canvas<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../js/tree.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="tree-js-源码"><a href="#tree-js-源码" class="header-anchor">#</a> tree.js 源码</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/**
+ * Created by 004928 on 2017/8/2.
+ */</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">window</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> w <span class="token operator">=</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">,</span>
+    h <span class="token operator">=</span> window<span class="token punctuation">.</span>innerHeight<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> ctx <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> treeNum <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> initRadius <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span> <span class="token comment">// 树干的初始宽度</span>
+  <span class="token keyword">var</span> maxGeneration <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 最多分支的次数</span>
+  <span class="token keyword">var</span> branchArray <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 树干的集合</span>
+  <span class="token keyword">var</span> flowers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 花的集合</span>
+
+  window<span class="token punctuation">.</span>MyRequestAnimationFrame <span class="token operator">=</span>
+    window<span class="token punctuation">.</span>requestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>mozRequestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>webkitRequestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>msRequestAnimationFrame<span class="token punctuation">;</span>
+
+  window<span class="token punctuation">.</span>MyCancelRequestAnimationFrame <span class="token operator">=</span>
+    window<span class="token punctuation">.</span>cancelRequestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>mozCancelRequestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>webkitCancelRequestAnimationFrame <span class="token operator">||</span>
+    window<span class="token punctuation">.</span>msCancelRequestAnimationFrame<span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 初始化canvas
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">initCanvas</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;myCanvas&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    canvas<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;width&quot;</span><span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    canvas<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;height&quot;</span><span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>canvas<span class="token punctuation">.</span>getContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ctx <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">&quot;2d&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">initTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 初始化树的数量
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">initTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    branchArray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BranchArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> treeNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      branchArray<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Branch</span><span class="token punctuation">(</span>w <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 树干
+   * @param x
+   * @param y
+   * @constructor
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">Branch</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> initRadius<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>angle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 树枝的初始角度</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">=</span> <span class="token number">2.35</span><span class="token punctuation">;</span> <span class="token comment">// 数生长的速度</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>generation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 生长
+   */</span>
+  <span class="token class-name">Branch</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">grow</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">Branch</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">draw</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">&quot;#55220F&quot;</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">arc</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>radius<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 更改数的高度以及扭曲度
+   */</span>
+  <span class="token class-name">Branch</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 计算树干每次的扭曲角度，因为树一般不是笔直生长的，都会有不规则的扭曲</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>angle <span class="token operator">+=</span> <span class="token function">random</span><span class="token punctuation">(</span>
+      <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.1</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> vx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 因为初始角度设置为Math.PI , 所以vy要取负数</span>
+    <span class="token keyword">var</span> vy <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">&lt;</span> <span class="token number">0.99</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation <span class="token operator">&gt;</span> maxGeneration<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      branchArray<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+=</span> vx<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">+=</span> vy<span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">*=</span> <span class="token number">0.99</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">&gt;=</span> <span class="token number">0.9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 计算当前是第几代分支</span>
+      <span class="token keyword">var</span> g <span class="token operator">=</span>
+        <span class="token punctuation">(</span><span class="token punctuation">(</span>maxGeneration <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> initRadius<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">+</span>
+        <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> maxGeneration<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>generation <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 随机创建分支</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 创建分支
+   * @param b
+   */</span>
+  <span class="token class-name">Branch</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">clone</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Branch</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> b<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>angle <span class="token operator">=</span> b<span class="token punctuation">.</span>angle<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>radius <span class="token operator">=</span> b<span class="token punctuation">.</span>radius<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>speed <span class="token operator">=</span> b<span class="token punctuation">.</span>speed<span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span>generation <span class="token operator">=</span> b<span class="token punctuation">.</span>generation<span class="token punctuation">;</span>
+    branchArray<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 如果当前分支次数大于3则创建花，这样可以让花在树的顶端显示</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>generation <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      flowers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Flower</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> b<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">BranchArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>branchs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 添加树干到集合中
+   * @param b
+   */</span>
+  <span class="token class-name">BranchArray</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>branchs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+   * 从集合中移除树干
+   * @param b
+   */</span>
+  <span class="token class-name">BranchArray</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">remove</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>branchs<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> index <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>branchs<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> b <span class="token operator">===</span> item<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>branchs<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 花
+   * @param x
+   * @param y
+   * @constructor
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">Flower</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 花瓣的半径</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>petals <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 花瓣数量</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">=</span> <span class="token number">1.0235</span><span class="token punctuation">;</span> <span class="token comment">// 花的绽放速度</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>maxR <span class="token operator">=</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 花的大小</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 花朵开放（通过改变花的半径实现开放的效果）
+   * @param index
+   */</span>
+  <span class="token class-name">Flower</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>maxR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      flowers<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">*=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>speed<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>maxR<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>maxR<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 绘制花朵
+   */</span>
+  <span class="token class-name">Flower</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">draw</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">&quot;#F3097B&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>petals<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> x0 <span class="token operator">=</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">360</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>petals<span class="token punctuation">)</span> <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> y0 <span class="token operator">=</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">360</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>petals<span class="token punctuation">)</span> <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ctx<span class="token punctuation">.</span><span class="token function">arc</span><span class="token punctuation">(</span>x0<span class="token punctuation">,</span> y0<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>r<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ctx<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">&quot;#F56BC1&quot;</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">arc</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>r <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token parameter">min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 循环遍历所有树干和花，并调用更新和draw方法，实现动画效果
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> branchArray<span class="token punctuation">.</span>branchs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> b <span class="token operator">=</span> branchArray<span class="token punctuation">.</span>branchs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      b<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> flowers<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>len<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      flowers<span class="token punctuation">[</span>len<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      flowers<span class="token punctuation">[</span>len<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">MyRequestAnimationFrame</span><span class="token punctuation">(</span>loop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  window<span class="token punctuation">.</span>onload <span class="token operator">=</span> initCanvas<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br></div></div><h2 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h2> <ul><li>1.生长: 因为树是越往上树干越细，我们通过绘制圆，通过无数的圆叠加来当做树的躯体，逐渐缩小圆的半径，即可实现树越往上越小的效果</li> <li>2.扭曲: 其次树的生长不是笔直的，是扭曲的，所以通过三角函数随机产生角度值，然后计算 x,y 轴的偏移量，这样就能实现树的扭曲</li> <li>3.分支: 通过双曲线方程 <em>y=-a/x + b</em> 去控制什么树在什么时候去产生分支（待会详解）；</li> <li>4.开花: 因为花一般都是长在末梢，而我则是显示在最后几个分支的结点以及末梢进行展示（这个开花地点随意，不必纠结）</li></ul> <h3 id="生长"><a href="#生长" class="header-anchor">#</a> 生长</h3> <blockquote><p>树的生长变细，主要通过改变树干的半径即可， _this.radius _= 0.99* 每次递减；</p></blockquote> <h3 id="扭曲"><a href="#扭曲" class="header-anchor">#</a> 扭曲</h3> <blockquote><p>关于树的扭曲，这个是重点，因为树枝延伸和扭曲都是不规则的，在 <em>Branch.prototype.update</em> 中</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>angle <span class="token operator">+=</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.1</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>generation<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>在区间[-0.1,0.1]中随机产生角度，通过三角函数计算 x,y 轴偏移量</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> vx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 因为初始角度设置为Math.PI , 所以vy要取负数</span>
+<span class="token keyword">var</span> vy <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>vx 的正负，决定了树的扭曲，vy 的正负，决定树是向上生长还是向下
+你可能觉得奇怪树为什么会向下生长，首先要理解我们这里将树抽象成了一个一个的圆
+无数个圆连接在一起才组成树干，这个要能理解，然后，有些树的枝干有时是会往下生长一段，然后又往上生长的
+这个生长的方向我们是不能控制的，并不是所有树都一直向上生长的，所以当 vy 为负值时就可以实现树枝
+向下生长的情况，当然这个也是随机的，也正是我们想要的效果。</p></blockquote> <h3 id="分支"><a href="#分支" class="header-anchor">#</a> 分支</h3> <blockquote><p>对于在什么时候应该让树去产生分支，我之前的想法是规定一段树干的长度，然后每次计算当前位置
+距离上一个分支点的距离是否大于我规定的长度，然后产生分支，但是这样就会看到每节分支之间的长度是一样的
+看起来不美观，比较死板，最终使用双曲线方程 <em>y=-1/x</em> 去控制因为双曲线的走势是先快后慢的，
+而树的生长也是越往后分支越多,可能你会奇怪曲线是先快后慢，树分叉是先慢后快的，不符合逻辑啊
+别着急，下看下图:</p></blockquote> <p><img src="https://img-blog.csdnimg.cn/img_convert/9d1dc81e9056b28d210b33d55eca6e46.png" alt="曲线图"></p> <blockquote><p>从图中可以看见，X 轴表示树干的粗细，Y 轴表示分支的次数，当树干越来越细的时候，X 轴变小
+是不是 Y 轴就越来越大，且是先慢后快，这样就符合我们的需求了。
+因此上面计算分支的次数公式就由此而来：</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> g <span class="token operator">=</span>
+  <span class="token punctuation">(</span><span class="token punctuation">(</span>maxGeneration <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> initRadius<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">+</span>
+  <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> maxGeneration<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>initRadius <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>得到分支次数，比较是否大于当前分支，于是便随即产生分支数量，详见 <em>Branch.prototype.clone</em> 也就是创建一个树干添加到 BranchArray 中</p></blockquote> <h3 id="开花"><a href="#开花" class="header-anchor">#</a> 开花</h3> <blockquote><p>至于开花的逻辑就比较简单，主要记录花朵开放的位置，然后绘制出来便可，至于花朵的形状，详见 <em>Flower.prototype.draw</em> 方法
+这里我就不做过多介绍了，比较简单，而花朵的开放效果，就是改变花朵的半径</p></blockquote> <p>一颗大树从生长到开花所有的逻辑步骤大概这四步，其中最主要的逻辑是扭曲，为了这个扭曲我想了好多天，苦闷死我了。
+最后通过循环调用 <em>loop</em> 方法， 遍历所有树干以及花朵，即可实现动态效果。</p> <p>Github <a href="https://github.com/K-walker/production/tree/master/web/effects/growTree" target="_blank" rel="noopener noreferrer">源码下载<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/kaigege/assets/js/app.ceb0ffd1.js" defer></script><script src="/kaigege/assets/js/2.9fb062ef.js" defer></script><script src="/kaigege/assets/js/55.d9fe3924.js" defer></script>
+  </body>
+</html>

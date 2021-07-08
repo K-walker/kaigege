@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Promise | 凯歌哥的小破站</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script charset="utf-8">
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1d56a9f2a862cd29074c56b896f1af64";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <meta name="description" content="来了,老弟! 坐下一起喝杯茶,聊聊人生呗^_^">
+    
+    <link rel="preload" href="/kaigege/assets/css/0.styles.8ec65887.css" as="style"><link rel="preload" href="/kaigege/assets/js/app.ceb0ffd1.js" as="script"><link rel="preload" href="/kaigege/assets/js/2.9fb062ef.js" as="script"><link rel="preload" href="/kaigege/assets/js/46.078a271e.js" as="script"><link rel="prefetch" href="/kaigege/assets/js/10.a5e49148.js"><link rel="prefetch" href="/kaigege/assets/js/11.83d4a5e2.js"><link rel="prefetch" href="/kaigege/assets/js/12.e79dc129.js"><link rel="prefetch" href="/kaigege/assets/js/13.3ad7ec73.js"><link rel="prefetch" href="/kaigege/assets/js/14.8243d018.js"><link rel="prefetch" href="/kaigege/assets/js/15.33142d7e.js"><link rel="prefetch" href="/kaigege/assets/js/16.fdd6e019.js"><link rel="prefetch" href="/kaigege/assets/js/17.af4ed603.js"><link rel="prefetch" href="/kaigege/assets/js/18.c1ca2677.js"><link rel="prefetch" href="/kaigege/assets/js/19.2b30f205.js"><link rel="prefetch" href="/kaigege/assets/js/20.4746e1bd.js"><link rel="prefetch" href="/kaigege/assets/js/21.151883be.js"><link rel="prefetch" href="/kaigege/assets/js/22.74559b3c.js"><link rel="prefetch" href="/kaigege/assets/js/23.3cca0fce.js"><link rel="prefetch" href="/kaigege/assets/js/24.7df3446b.js"><link rel="prefetch" href="/kaigege/assets/js/25.4a44d0f2.js"><link rel="prefetch" href="/kaigege/assets/js/26.c2c7fc80.js"><link rel="prefetch" href="/kaigege/assets/js/27.1324fce7.js"><link rel="prefetch" href="/kaigege/assets/js/28.996ed6ca.js"><link rel="prefetch" href="/kaigege/assets/js/29.deb1a3ec.js"><link rel="prefetch" href="/kaigege/assets/js/3.efbefac2.js"><link rel="prefetch" href="/kaigege/assets/js/30.d610f047.js"><link rel="prefetch" href="/kaigege/assets/js/31.0772f947.js"><link rel="prefetch" href="/kaigege/assets/js/32.532e423d.js"><link rel="prefetch" href="/kaigege/assets/js/33.fd3fb45a.js"><link rel="prefetch" href="/kaigege/assets/js/34.2fee9448.js"><link rel="prefetch" href="/kaigege/assets/js/35.9c3daa23.js"><link rel="prefetch" href="/kaigege/assets/js/36.fe4154c8.js"><link rel="prefetch" href="/kaigege/assets/js/37.0ab195eb.js"><link rel="prefetch" href="/kaigege/assets/js/38.9eb113ff.js"><link rel="prefetch" href="/kaigege/assets/js/39.27f4fd6a.js"><link rel="prefetch" href="/kaigege/assets/js/4.47a1cbc9.js"><link rel="prefetch" href="/kaigege/assets/js/40.21d541aa.js"><link rel="prefetch" href="/kaigege/assets/js/41.fcab843b.js"><link rel="prefetch" href="/kaigege/assets/js/42.01441c2d.js"><link rel="prefetch" href="/kaigege/assets/js/43.a8ee3312.js"><link rel="prefetch" href="/kaigege/assets/js/44.38d710ce.js"><link rel="prefetch" href="/kaigege/assets/js/45.5be7be87.js"><link rel="prefetch" href="/kaigege/assets/js/47.2ad3e4bd.js"><link rel="prefetch" href="/kaigege/assets/js/48.1a43bf75.js"><link rel="prefetch" href="/kaigege/assets/js/49.ace34f72.js"><link rel="prefetch" href="/kaigege/assets/js/5.52d0a8da.js"><link rel="prefetch" href="/kaigege/assets/js/50.eeef3018.js"><link rel="prefetch" href="/kaigege/assets/js/51.c6e54794.js"><link rel="prefetch" href="/kaigege/assets/js/52.bc8b5fdf.js"><link rel="prefetch" href="/kaigege/assets/js/53.026d7abf.js"><link rel="prefetch" href="/kaigege/assets/js/54.5f72d91d.js"><link rel="prefetch" href="/kaigege/assets/js/55.d9fe3924.js"><link rel="prefetch" href="/kaigege/assets/js/56.ede25dda.js"><link rel="prefetch" href="/kaigege/assets/js/57.0ab04710.js"><link rel="prefetch" href="/kaigege/assets/js/58.1eb84b4d.js"><link rel="prefetch" href="/kaigege/assets/js/59.300f6aef.js"><link rel="prefetch" href="/kaigege/assets/js/6.4f6aa0a4.js"><link rel="prefetch" href="/kaigege/assets/js/60.79e4a68f.js"><link rel="prefetch" href="/kaigege/assets/js/61.b580788c.js"><link rel="prefetch" href="/kaigege/assets/js/62.21f846ad.js"><link rel="prefetch" href="/kaigege/assets/js/63.8be7dc66.js"><link rel="prefetch" href="/kaigege/assets/js/7.162aa43a.js"><link rel="prefetch" href="/kaigege/assets/js/8.12d84e63.js"><link rel="prefetch" href="/kaigege/assets/js/9.0e06adc7.js">
+    <link rel="stylesheet" href="/kaigege/assets/css/0.styles.8ec65887.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/kaigege/" class="home-link router-link-active"><!----> <span class="site-name">凯歌哥的小破站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用命令" class="dropdown-title"><span class="title">常用命令</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用命令" class="mobile-dropdown-title"><span class="title">常用命令</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/commands/linux/index.html" class="nav-link">
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/git/index.html" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/nginx/index.html" class="nav-link">
+  nginx
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/docker/index.html" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/vi/index.html" class="nav-link">
+  vi
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/redis/index.html" class="nav-link">
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mysql/index.html" class="nav-link">
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/npm/index.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/mac/index.html" class="nav-link">
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/commands/centos/index.html" class="nav-link">
+  centos
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS进阶" class="dropdown-title"><span class="title">JS进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS进阶" class="mobile-dropdown-title"><span class="title">JS进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/js/function/index.html" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/vo/index.html" class="nav-link">
+  变量对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/scope/index.html" class="nav-link">
+  作用域链
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/closure/index.html" class="nav-link">
+  闭包
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/cross/index.html" class="nav-link">
+  跨域
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/extends/index.html" class="nav-link">
+  继承
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/ajax/index.html" class="nav-link">
+  ajax
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/event-loop/index.html" class="nav-link">
+  event loop
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/timer/index.html" class="nav-link">
+  定时器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/promise/index.html" class="nav-link">
+  promise
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/context/index.html" class="nav-link">
+  执行上下文
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/copy/index.html" class="nav-link">
+  深拷贝和浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/new/index.html" class="nav-link">
+  new
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/apply-call-bind/index.html" class="nav-link">
+  apply、call和bind
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/object/index.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/js/operator/index.html" class="nav-link">
+  运算符
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="React" class="dropdown-title"><span class="title">React</span> <span class="arrow down"></span></button> <button type="button" aria-label="React" class="mobile-dropdown-title"><span class="title">React</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/react/lifecycle/index.html" class="nav-link">
+  生命周期
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/diff/index.html" class="nav-link">
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/comp-performance-optimization/index.html" class="nav-link">
+  组件性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/hooks/index.html" class="nav-link">
+  hooks
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/react/redux/index.html" class="nav-link">
+  Redux
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/vue/index.html" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="ES6" class="dropdown-title"><span class="title">ES6</span> <span class="arrow down"></span></button> <button type="button" aria-label="ES6" class="mobile-dropdown-title"><span class="title">ES6</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/es6/reflect/index.html" class="nav-link">
+  reflect
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/iterable/index.html" class="nav-link">
+  iterable
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/proxy/index.html" class="nav-link">
+  proxy
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/set-map/index.html" class="nav-link">
+  set/map
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/symbol/index.html" class="nav-link">
+  symbol
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/decorator/index.html" class="nav-link">
+  装饰器
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/async-await/index.html" class="nav-link">
+  async/await
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/spec/index.html" class="nav-link">
+  规格
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/es6/import-export/index.html" class="nav-link">
+  import/export
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web基础" class="dropdown-title"><span class="title">Web基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Web基础" class="mobile-dropdown-title"><span class="title">Web基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/web/css/index.html" class="nav-link">
+  CSS/CSS3
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/html/index.html" class="nav-link">
+  HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/webpack/index.html" class="nav-link">
+  webpack原理
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/web/http/index.html" class="nav-link">
+  Http/TCP
+</a></li></ul></div></div><div class="nav-item"><a href="/kaigege/algorithm/index.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="就是玩儿" class="dropdown-title"><span class="title">就是玩儿</span> <span class="arrow down"></span></button> <button type="button" aria-label="就是玩儿" class="mobile-dropdown-title"><span class="title">就是玩儿</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/just-play/particle/index.html" class="nav-link">
+  粒子特效
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/tree/index.html" class="nav-link">
+  生长的大树
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/jsonview/index.html" class="nav-link">
+  JSON可视化
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/danmu/index.html" class="nav-link">
+  弹幕
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/i18n/index.html" class="nav-link">
+  国际化方案
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/el-menu/index.html" class="nav-link">
+  动态生成el-menu
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/just-play/apicloud/index.html" class="nav-link">
+  vue+apicloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂记" class="dropdown-title"><span class="title">杂记</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂记" class="mobile-dropdown-title"><span class="title">杂记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/kaigege/other/computer/index.html" class="nav-link">
+  计算机
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/photography/index.html" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/kaigege/other/moto/index.html" class="nav-link">
+  摩托车
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Promise</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/kaigege/js/promise/#promise-一些特性" class="sidebar-link">Promise 一些特性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/js/promise/#手写实现-promise" class="sidebar-link">手写实现 Promise</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/kaigege/js/promise/#手动实现-promise-retry-方法" class="sidebar-link">手动实现 Promise.retry 方法</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="promise"><a href="#promise" class="header-anchor">#</a> Promise</h1> <h2 id="promise-一些特性"><a href="#promise-一些特性" class="header-anchor">#</a> Promise 一些特性</h2> <p><a href="https://zhuanlan.zhihu.com/p/58428287" target="_blank" rel="noopener noreferrer">图解 Promise 实现原理<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>在 fetchData 异步函数运行完之前,回调函数式不会被调用的，即使异步函数完成或失败，在这之后通过 then() 添加的回调函数，还是会被调用，通过多次调用 then() 可以添加多个回调函数，它们会按插入循序执行，如果 then 中的回调函数没有返回值，则下一个 then 的回调中将接收不到值，第一个 catch 捕捉到错误之后，还是会继续执行下面的代码,直到链式调用结束为止，且 catch 只会捕捉其前面回调中的报错</p> <h2 id="手写实现-promise"><a href="#手写实现-promise" class="header-anchor">#</a> 手写实现 Promise</h2> <blockquote><p>Promise 的 then 方法实际是用来注册回调方法的，实际调用还是在 resolve 中执行的，
+并且 then 方法会返回一个新的 Promise 对象,</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">MyPromise</span> <span class="token punctuation">{</span>
+  callbacks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  value <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  state <span class="token operator">=</span> <span class="token string">&quot;pending&quot;</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_resolve</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_reject</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 有时候 then 方法回调中可能会返回一个 promise</span>
+  <span class="token comment">// 而根据 Promise/A+ 规范定义的 promise 是一个拥有 then 方法的对象或函数</span>
+  <span class="token function">_resolve</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">&quot;function&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> then <span class="token operator">=</span> value<span class="token punctuation">.</span>then<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> then <span class="token operator">===</span> <span class="token string">&quot;function&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 此处的 value 是 then方法调用时的环境,因为 then 方法属于 value</span>
+        <span class="token function">then</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_resolve</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_reject</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token string">&quot;fulfilled&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_handle</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">_reject</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token string">&quot;rejected&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> err<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_handle</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">_handle</span><span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 等待态</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">&quot;pending&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 执行态</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">&quot;fulfilled&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cb<span class="token punctuation">.</span>onFulfilled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cb<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> ret <span class="token operator">=</span> cb<span class="token punctuation">.</span><span class="token function">onFulfilled</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cb<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cb<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 拒绝态</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">&quot;rejected&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cb<span class="token punctuation">.</span>onRejected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cb<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment">// catch 捕获到错误之后，如果后面还有then方法，则应该执行 resolve</span>
+        <span class="token keyword">const</span> ret <span class="token operator">=</span> cb<span class="token punctuation">.</span><span class="token function">onRejected</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cb<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cb<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ① 当参数是一个 promise 对象时，直接返回这个 promise</span>
+  <span class="token comment">// ② 如果参数是其他类型的值，则返回一个新的 promise 包装下这个参数</span>
+  <span class="token comment">// ③ 如果 value 为 null,直接返回一个新的 promise</span>
+  <span class="token comment">// ④ value 是一个 thenable 的对象: 定义了 then 方法的对象或函数</span>
+  <span class="token keyword">static</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token keyword">instanceof</span> <span class="token class-name">MyPromise</span><span class="token punctuation">)</span> <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value<span class="token punctuation">.</span>then <span class="token operator">===</span> <span class="token string">&quot;function&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> value<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Promise.reject 始终返回一个 拒绝态 的 Promise 的实例</span>
+  <span class="token keyword">static</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value<span class="token punctuation">.</span>then <span class="token operator">===</span> <span class="token string">&quot;function&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> value<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>reject<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">reject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">onFulfilled<span class="token punctuation">,</span> onRejected</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyPromise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_handle</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        onFulfilled<span class="token operator">:</span> onFulfilled<span class="token punctuation">,</span>
+        onRejected<span class="token operator">:</span> onRejected<span class="token punctuation">,</span>
+        resolve<span class="token operator">:</span> resolve<span class="token punctuation">,</span>
+        reject<span class="token operator">:</span> reject<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">catch</span><span class="token punctuation">(</span>onError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> onError<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">finally</span><span class="token punctuation">(</span>onDone<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br></div></div><h2 id="手动实现-promise-retry-方法"><a href="#手动实现-promise-retry-方法" class="header-anchor">#</a> 手动实现 Promise.retry 方法</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Promise<span class="token punctuation">.</span><span class="token function-variable function">retry</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fn <span class="token punctuation">,</span> count</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/kaigege/assets/js/app.ceb0ffd1.js" defer></script><script src="/kaigege/assets/js/2.9fb062ef.js" defer></script><script src="/kaigege/assets/js/46.078a271e.js" defer></script>
+  </body>
+</html>

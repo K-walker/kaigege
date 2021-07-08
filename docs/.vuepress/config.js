@@ -35,6 +35,10 @@ module.exports = {
             link: "/commands/nginx/index.md",
           },
           {
+            text: "docker",
+            link: "/commands/docker/index.md",
+          },
+          {
             text: "vi",
             link: "/commands/vi/index.md",
           },
